@@ -2,6 +2,8 @@
 #include <sstream>
 
 #include "matrix.hpp"
+//
+#include "matrix.h"
 
 TEST_CASE("creating matrix")
 {
