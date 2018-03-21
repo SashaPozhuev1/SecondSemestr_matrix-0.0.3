@@ -1,4 +1,6 @@
 #include <iostream>
+//
+#include "matrix.h"
 
 template <typename T>
 class matrix_t {
