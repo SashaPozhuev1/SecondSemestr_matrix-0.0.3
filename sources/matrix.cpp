@@ -1,11 +1,11 @@
 #include "matrix.hpp"
 
-template <class T>
+template <typename T>
 matrix_t<T>::matrix_t() : elements_{ nullptr }, rows_{ 0 }, collumns_{ 0 }
 {
 }
 
-template <class T>
+template <typename T>
 matrix_t<T>::matrix_t( matrix_t<T> const & other )
 {
 	rows_ = other.rows_;
@@ -20,7 +20,7 @@ matrix_t<T>::matrix_t( matrix_t<T> const & other )
 		}
 }
 
-template <class T>
+template <typename T>
 matrix_t<T> & matrix_t<T>::operator =( matrix_t<T> const & other )
 {
 	if (this != &other) {
@@ -45,7 +45,7 @@ matrix_t<T> & matrix_t<T>::operator =( matrix_t<T> const & other )
 	return *this;
 }
 
-template <class T>
+template <typename T>
 matrix_t<T>::~matrix_t()
 {
 	for (std::size_t i = 0; i < rows_; ++i) {
@@ -54,19 +54,19 @@ matrix_t<T>::~matrix_t()
 		delete[] elements_;
 }
 
-template <class T>
+template <typename T>
 std::size_t matrix_t<T>::rows() const
 {
     return rows_;
 }
 
-template <class T>
+template <typename T>
 std::size_t matrix_t<T>::collumns() const
 {
     return collumns_;
 }
 
-template <class T>
+template <typename T>
 matrix_t<T> matrix_t<T>::operator +( matrix_t<T> const & other ) const
 {
 	matrix_t<T> result(other);
@@ -85,7 +85,7 @@ matrix_t<T> matrix_t<T>::operator +( matrix_t<T> const & other ) const
 	return result;
 }
 
-template <class T>
+template <typename T>
 matrix_t<T> matrix_t<T>::operator -( matrix_t<T> const & other ) const
 {
 	matrix_t<T> result(other);
@@ -105,7 +105,7 @@ matrix_t<T> matrix_t<T>::operator -( matrix_t<T> const & other ) const
 	return result;
 }
 
-template <class T>
+template <typename T>
 matrix_t<T> matrix_t<T>::operator *( matrix_t<T> const & other ) const
 {
 	matrix_t<T> result;
@@ -136,7 +136,7 @@ matrix_t<T> matrix_t<T>::operator *( matrix_t<T> const & other ) const
 	return result;
 }
 
-template <class T>
+template <typename T>
 matrix_t<T> & matrix_t<T>::operator -=( matrix_t<T> const & other )
 {
 	if (rows_ == other.rows_ &&
@@ -154,7 +154,7 @@ matrix_t<T> & matrix_t<T>::operator -=( matrix_t<T> const & other )
 	return *this;
 }
 
-template <class T>
+template <typename T>
 matrix_t<T> & matrix_t<T>::operator +=( matrix_t<T> const & other )
 {
 	if (rows_ == other.rows_ &&
@@ -172,7 +172,7 @@ matrix_t<T> & matrix_t<T>::operator +=( matrix_t<T> const & other )
 	return *this;
 }
 
-template <class T>
+template <typename T>
 matrix_t<T> & matrix_t<T>::operator *=( matrix_t<T> const & other )
 {
 		if (collumns_ == other.rows_) {
@@ -204,7 +204,7 @@ matrix_t<T> & matrix_t<T>::operator *=( matrix_t<T> const & other )
 	return *this;
 }
 
-template <class T>
+template <typename T>
 std::istream & matrix_t<T>::read( std::istream & stream )
 {
     std::size_t rows;
@@ -252,7 +252,7 @@ std::istream & matrix_t<T>::read( std::istream & stream )
 	return stream;
 }
 
-template <class T>
+template <typename T>
 std::ostream & matrix_t<T>::write( std::ostream & stream ) const
 {
     stream << rows_ << ", " << collumns_;
