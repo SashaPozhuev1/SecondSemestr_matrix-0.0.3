@@ -3,7 +3,7 @@
 
 #include "matrix.hpp"
 //
-#include "matrix.h"
+#include "matrix1.hpp"
 
 TEST_CASE("creating matrix")
 {
