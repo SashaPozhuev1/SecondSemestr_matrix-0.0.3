@@ -1,3 +1,4 @@
+/*
 #include "matrix.hpp"
 //#include "matrix.h"
 template <typename T>
@@ -268,3 +269,4 @@ std::ostream & matrix_t<T>::write( std::ostream & stream ) const
     
 	return stream;
 }
+*/
