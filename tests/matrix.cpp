@@ -14,9 +14,9 @@ TEST_CASE("reading matrix")
 {
     std::string input{
         "3, 3\n"
-        "1.1 1. 1.\n"
-        "2. 2.2 2.\n"
-        "3. 3. 3.3" };
+        "1.1 1 1\n"
+        "2 2.2 2\n"
+        "3 3 3.3" };
     matrix_t<float> matrix;
     std::istringstream istream{ input };
     
