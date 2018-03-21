@@ -14,9 +14,9 @@ TEST_CASE("reading matrix")
 {
     std::string input{
         "3, 3\n"
-        "1.1f 1.f 1.f\n"
-        "2.f 2.2f 2.f\n"
-        "3.f 3.f 3.3f" };
+        "1.1 1. 1.\n"
+        "2. 2.2 2.\n"
+        "3. 3. 3.3" };
     matrix_t<float> matrix;
     std::istringstream istream{ input };
     
@@ -34,19 +34,19 @@ TEST_CASE("add matrix")
 {
     std::string stroka1{
         "3, 4\n"
-        "1.1f 1f 4f 5f\n"
-        "2f 1.2f 2f 6f\n"
-        "9f 3f 3.3f 7f" }; 
+        "1.1 1 4 5\n"
+        "2 1.2 2 6\n"
+        "9 3 3.3 7" }; 
     std::string stroka2{
         "3, 4\n"
-        "7.1f 2f 2f 7f\n"
-        "1f 5.2f 2f 6f\n"
-        "2f 2f 8.3f 5f" };
+        "7.1 2 2 7\n"
+        "1 5.2 2 6\n"
+        "2 2 8.3 5" };
     std::string strokar{
         "3, 4\n"
-        "8.2f 3f 6f 12f\n"
-        "3f 6.4f 4f 12f\n"
-        "11f 5f 11.6f 12f" };
+        "8.2 3 6 12\n"
+        "3 6.4 4 12\n"
+        "11 5 11.6 12" };
     
     matrix_t<float> matrix1;
     matrix_t<float> matrix2;
