@@ -147,9 +147,9 @@ TEST_CASE("selfsub matrix")
         "9.1 3.1 3.1 7.1" }; 
     std::string strokar{
         "3, 4\n"
-        "7.2 2.2 2.2 7.2\n"
-        "1.2 5.2 2.2 6.2\n"
-        "2.2 2.2 8.2 5.2" };
+        "7 2 2 7\n"
+        "1 5 2 6\n"
+        "2 2 8 5" };
     
     matrix_t<float> matrix1, matrix2;   
     std::istringstream istream1{ stroka1 };
@@ -214,9 +214,9 @@ TEST_CASE("selfmul matrix")
         "1.2 1.2 1.2" };
     std::string strokar{
         "3, 3\n"
-        "24.38	23.28	44.58\n"
-        "28.38	22.28	31.58\n"
-        "84.58	51.48	60.78" };
+        "24.38 23.28 44.58\n"
+        "28.38 22.28 31.58\n"
+        "84.58 51.48 60.78" };
     
     matrix_t<float> matrix1, matrix2;   
     std::istringstream istream1{ stroka1 };
