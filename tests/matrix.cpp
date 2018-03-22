@@ -297,7 +297,7 @@ TEST_CASE("selfadd error_matrix")
     matrix1.read( istream1 );
     matrix2.read( istream2 );
      
-    REQUIRE_THROWS_AS( matrix1 += matrix2, std::invaid_argument );
+    REQUIRE_THROWS_AS( matrix1 += matrix2, std::invalid_argument );
 }
 
 TEST_CASE("mul error_matrix")
