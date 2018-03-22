@@ -79,7 +79,7 @@ matrix_t<T> operator +( matrix_t<T> const & other ) const
 		}
 	}
 	else {
-		std::cout << "An error has occured while reading input data__\n";
+		throw std::invalid_argument("An error has occured while reading input data__\n");
 	}
 	
 	return result;
@@ -98,7 +98,7 @@ matrix_t<T> operator -( matrix_t<T> const & other ) const
 		return result;
 	}
 	else {
-		std::cout << "An error has occured while reading input data__\n";	
+		throw std::invalid_argument("An error has occured while reading input data__\n");
 	}
 	
 	return result;
@@ -128,7 +128,7 @@ matrix_t<T> operator *( matrix_t<T> const & other ) const
 			}
 		}
 		else {
-			std::cout << "An error has occured while reading input data__\n";	
+			throw std::invalid_argument("An error has occured while reading input data__\n");	
 		}
 	
 	return result;
@@ -145,7 +145,7 @@ matrix_t<T> & operator -=( matrix_t<T> const & other )
 		}
 	}
 	else {
-		std::cout << "An error has occured while reading input data__\n";
+		throw std::invalid_argument("An error has occured while reading input data__\n");
 	}
 	
 	return *this;
@@ -162,7 +162,7 @@ matrix_t<T> & operator +=( matrix_t<T> const & other )
 		}
 	}
 	else {
-		std::cout << "An error has occured while reading input data__\n";
+		throw std::invalid_argument("An error has occured while reading input data__\n");
 	}
 	
 	return *this;
@@ -193,7 +193,7 @@ matrix_t<T> & operator *=( matrix_t<T> const & other )
 			*this = result;
 		}
 		else {
-			std::cout << "An error has occured while reading input data__\n";	
+			throw std::invalid_argument("An error has occured while reading input data__\n");	
 		}
 	
 	return *this;
