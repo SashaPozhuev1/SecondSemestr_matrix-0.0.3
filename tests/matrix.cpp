@@ -85,7 +85,7 @@ TEST_CASE("add error_matrix")
     matrix1.read( istream1 );
     matrix2.read( istream2 );
     
-    REQUIRE( matrix1 + matrix2 == std::invalid_argument);
+    REQUIRE_THROWS_AS( matrix1 + matrix2, std::invalid_argument);
 }
 
 TEST_CASE("sub matrix")
