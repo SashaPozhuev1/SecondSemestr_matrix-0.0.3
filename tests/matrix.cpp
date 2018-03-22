@@ -65,6 +65,40 @@ TEST_CASE("add matrix")
     REQUIRE( strokar == ostream.str() );
 }
 
+TEST_CASE("add error_matrix")
+{
+    std::string stroka1{
+        "3, 4\n"
+        "1.1 1 4 5\n"
+        "2 1.2 2 6\n"
+        "9 3 3.3 7" }; 
+    std::string stroka2{
+        "3, 4\n"
+        "7.1 2 2 7\n"
+        "2 2 8.3 5" };
+    std::string strokar{
+        "3, 4\n"
+        "8.2 3 6 12\n"
+        "3 6.4 4 12\n"
+        "11 5 11.6 12" };
+    
+    matrix_t<float> matrix1;
+    matrix_t<float> matrix2;
+    matrix_t<float> result;   
+    std::istringstream istream1{ stroka1 };
+    std::istringstream istream2{ stroka2 };
+    
+    matrix1.read( istream1 );
+    matrix2.read( istream2 );
+    
+    result = matrix1 + matrix2;
+    
+    std::ostringstream ostream;
+    result.write( ostream );
+    
+    REQUIRE( result == std::invalid_argument);
+}
+
 TEST_CASE("sub matrix")
 {
     std::string stroka1{
